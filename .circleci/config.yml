@@ -11,6 +11,7 @@ jobs:
       - run: |
           cd cmd/waitport
           go build
+          ls -la
           cd ../..
       - save_cache:
           key: go-mod-v1-{{ checksum "go.sum" }}
