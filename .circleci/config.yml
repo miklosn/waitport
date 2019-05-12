@@ -10,7 +10,8 @@ jobs:
       - run: go vet ./...
       - run: |
           cd cmd/waitport
-          go build
+          env GOARCH=darwin go build -o waitport-darwin
+          env GOARCH=linux go build -o waitport-linux
           ls -la
           cd ../..
       - save_cache:
